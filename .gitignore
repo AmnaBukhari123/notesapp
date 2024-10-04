@@ -21,3 +21,6 @@ env/
 *.log
 
 *.ini
+
+.venv/
+alembic/
