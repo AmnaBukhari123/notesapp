@@ -45,7 +45,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
 
 
 
-@router.post("/registers")
+@router.post("/users")
 def register_user(user: CreateUsers, db: Session = Depends(get_db)):
     # checking if the username or email already exists or not
     existing_user = db.query(Users).filter((Users.username == user.username) | (Users.email == user.email)).first()

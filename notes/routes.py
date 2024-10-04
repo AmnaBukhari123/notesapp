@@ -9,12 +9,12 @@ from typing import List
 
 router = APIRouter()
 
-@router.get("/read-notes", response_model=List[NoteResponse])
+@router.get("/notes", response_model=List[NoteResponse])
 def read_notes(db: Session = Depends(get_db),  current_user: Users = Depends(get_user)):
     notes = db.query(Notes).all()
     return notes
 
-@router.post("/write-notes", response_model=NoteResponse)
+@router.post("/notes", response_model=NoteResponse)
 def write_notes(note: CreateNotes, db: Session = Depends(get_db),  current_user: Users = Depends(get_user)):
     db_note = Notes(title=note.title, description=note.description)
     db.add(db_note)
