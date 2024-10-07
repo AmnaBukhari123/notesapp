@@ -1,11 +1,5 @@
 from fastapi import HTTPException, Depends, status
-from passlib.context import CryptContext # type: ignore
-from jose import jwt 
-from database import engine, SessionLocal
-from auth.schemas import TokenData
-from sqlalchemy.orm import Session
-
-
+from passlib.context import CryptContext 
 
 
 SECRET_KEY = "7576a5fb4dec953d694206811b7ed1d87f16953a52f6093541e6d7a7bbbb1b7b"
