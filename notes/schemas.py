@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class CreateNotes(BaseModel):
     title: str
     description: str

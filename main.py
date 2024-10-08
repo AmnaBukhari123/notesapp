@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from database.database import Base, engine
+from database.service import Base, engine
 from auth.routes import router as auth_router
 from notes.routes import router as notes_router
 
